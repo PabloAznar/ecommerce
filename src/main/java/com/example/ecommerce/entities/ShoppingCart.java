@@ -4,14 +4,14 @@ import jakarta.persistence.*;
 
 import java.util.List;
 @Entity
-@Table(schema = "shopping_cart")
-public class ShopingCart {
+@Table(name = "SHOPPING_CART")
+public class ShoppingCart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @OneToMany
+    @ManyToMany
     private List<Product> pendingProducts;
 
 }

@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(schema = "users")
+@Table(name = "\"USER\"")
 public class User {
 
     @Id
@@ -24,11 +24,14 @@ public class User {
 
     @OneToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "shopping_cart_id")
-    private ShopingCart shopingCartId;
+    private ShoppingCart shoppingCartId;
 
     @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     private List<Direction> directions;
 
-    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "user")
     private List<Order> orders;
+
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    private List<Payment> payments;
 }

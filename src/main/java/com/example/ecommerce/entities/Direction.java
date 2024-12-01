@@ -3,7 +3,7 @@ package com.example.ecommerce.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(schema = "direction")
+@Table(name = "DIRECTION")
 public class Direction {
 
     @Id
