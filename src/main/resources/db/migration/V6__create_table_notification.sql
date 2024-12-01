@@ -4,10 +4,10 @@ CREATE TABLE IF NOT EXISTS NOTIFICATION(
 
     description text null,
 
-    user_id varchar(45) not null
+    user_id varchar(45) not null,
 
-    constraint notification_fk_user_id foreign key (user_id) references "user"(id)
+    constraint notification_fk_user_id foreign key (user_id) references "USER"(id)
 
 );
 
-CREATE INDEX IF NOT EXISTS idx_notification ON TABLE notification(user_id);
+CREATE INDEX IF NOT EXISTS idx_notification ON notification(user_id);

@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS "ORDER"(
 
     user_id varchar(45) not null,
 
-    constraint order_fk_user_id foreign key (user_id) references "user"(id)
+    constraint order_fk_user_id foreign key (user_id) references "USER"(id)
 );
 
-CREATE INDEX IF NOT EXISTS idx_order ON TABLE "order"(user_id);
+CREATE INDEX IF NOT EXISTS idx_order ON "ORDER"(user_id);

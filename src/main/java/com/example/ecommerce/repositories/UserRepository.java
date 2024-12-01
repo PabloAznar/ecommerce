@@ -1,15 +1,20 @@
 package com.example.ecommerce.repositories;
 
 import com.example.ecommerce.entities.User;
+import org.hibernate.SessionFactory;
+import org.springframework.transaction.annotation.Transactional;
 
-public class UserRepository implements Repository<String, User>{
-    @Override
-    public User findById(String id) {
-        return null;
+@org.springframework.stereotype.Repository
+@Transactional
+public class UserRepository extends Repository<String, User>{
+
+    public UserRepository(SessionFactory sessionFactory) {
+        super(sessionFactory, User.class);
     }
 
+    //TODO
     @Override
-    public User save(User entity) {
+    public User findByCriteria() {
         return null;
     }
 }

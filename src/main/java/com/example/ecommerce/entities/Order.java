@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(schema = "order")
+@Table(name = "\"ORDER\"")
 public class Order {
 
     @Id
@@ -21,7 +21,7 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @OneToMany
+    @ManyToMany
     private List<Product> products;
 
     @ManyToOne

@@ -19,5 +19,5 @@ CREATE TABLE IF NOT EXISTS "USER"(
     constraint user_fk_shopping_cart_id foreign key(shopping_cart_id) references shopping_cart(id)
 );
 
-CREATE INDEX IF NOT EXIST idx_user_login ON TABLE "USER"(email, password);
-CREATE INDEX IF NOT EXIST idx_user ON TABLE "USER"(id);
+CREATE INDEX IF NOT EXISTS idx_user_login ON "USER"(email, password);
+CREATE INDEX IF NOT EXISTS idx_user ON "USER"(id);
