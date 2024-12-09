@@ -19,4 +19,5 @@ public class UserService {
         return this.userRepository.findById(userId)
                 .orElse(null);
     }
+
 }
