@@ -1,5 +1,8 @@
 package com.example.ecommerce.repositories;
 
+import com.example.ecommerce.exceptions.ECommerceException;
+import com.example.ecommerce.exceptions.ExceptionType;
+
 public enum OperationFilter {
     EQUALS("="),
     NOT_EQUALS("!="),
@@ -20,7 +23,7 @@ public enum OperationFilter {
             case ">" ->  OperationFilter.GREATER_THAN;
             case "<" ->  OperationFilter.LESS_THAN;
             case "contains" ->  OperationFilter.CONTAINS;
-            default -> null;
+            default -> throw new ECommerceException(ExceptionType.OPERATION_NOT_SUPPORTED);
         };
     }
 
