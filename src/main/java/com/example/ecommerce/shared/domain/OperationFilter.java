@@ -1,7 +1,7 @@
-package com.example.ecommerce.repositories;
+package com.example.ecommerce.shared.domain;
 
-import com.example.ecommerce.exceptions.ECommerceException;
-import com.example.ecommerce.exceptions.ExceptionType;
+import com.example.ecommerce.shared.exceptions.ECommerceException;
+import com.example.ecommerce.shared.exceptions.ExceptionType;
 
 public enum OperationFilter {
     EQUALS("="),
@@ -25,6 +25,10 @@ public enum OperationFilter {
             case "contains" ->  OperationFilter.CONTAINS;
             default -> throw new ECommerceException(ExceptionType.OPERATION_NOT_SUPPORTED);
         };
+    }
+
+    public String getOperation() {
+        return operation;
     }
 
 }

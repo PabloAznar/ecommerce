@@ -1,10 +1,11 @@
-package com.example.ecommerce.exceptions;
+package com.example.ecommerce.shared.exceptions;
 
 import org.springframework.http.HttpStatus;
 
 public enum ExceptionType {
 
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "User not found"),
+    SHOPPING_CART_NOT_FOUND(HttpStatus.NOT_FOUND, "Shopping cart not found"),
     OPERATION_NOT_SUPPORTED(HttpStatus.BAD_REQUEST, "SQL Operation provided not supported by criteria");
 
     private HttpStatus status;

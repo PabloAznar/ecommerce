@@ -1,4 +1,4 @@
-package com.example.ecommerce.globalhandler;
+package com.example.ecommerce.shared.errorhandler;
 
 public class ErrorResponse {
 

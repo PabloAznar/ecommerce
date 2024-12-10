@@ -1,6 +1,6 @@
-package com.example.ecommerce.globalhandler;
+package com.example.ecommerce.shared.errorhandler;
 
-import com.example.ecommerce.exceptions.ECommerceException;
+import com.example.ecommerce.shared.exceptions.ECommerceException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

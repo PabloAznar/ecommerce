@@ -1,5 +1,8 @@
-package com.example.ecommerce.repositories;
+package com.example.ecommerce.shared.infrastructure;
 
+import com.example.ecommerce.shared.domain.Criteria;
+import com.example.ecommerce.shared.domain.Filter;
+import com.example.ecommerce.shared.domain.OperationFilter;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;

@@ -1,4 +1,4 @@
-package com.example.ecommerce.configuration;
+package com.example.ecommerce.shared.configuration;
 
 import org.flywaydb.core.Flyway;
 import org.hibernate.SessionFactory;
@@ -29,7 +29,7 @@ public class HibernateConfiguration {
     public SessionFactory sessionFactory() {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setDataSource(dataSource());
-        factoryBean.setPackagesToScan("com.example.ecommerce.entities");
+        factoryBean.setPackagesToScan("com.example.ecommerce");
         factoryBean.setHibernateProperties(hibernateProperties());
         try {
             factoryBean.afterPropertiesSet();

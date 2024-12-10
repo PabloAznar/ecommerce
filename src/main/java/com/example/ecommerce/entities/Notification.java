@@ -1,5 +1,6 @@
 package com.example.ecommerce.entities;
 
+import com.example.ecommerce.user.domain.User;
 import jakarta.persistence.*;
 
 @Entity

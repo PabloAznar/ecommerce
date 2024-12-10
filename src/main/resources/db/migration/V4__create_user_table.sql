@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS "USER"(
 
     password varchar(1000) not null,
 
-    shopping_cart_id varchar(45) not null,
+    shopping_cart_id varchar(45),
 
     payment_id varchar(45) null,
 

@@ -1,4 +1,4 @@
-package com.example.ecommerce.repositories;
+package com.example.ecommerce.shared.domain;
 
 public class Filter {
 
