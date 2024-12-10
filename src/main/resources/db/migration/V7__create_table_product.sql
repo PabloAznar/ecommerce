@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS PRODUCT(
 
     description text not null,
 
-    price double not null,
+    price double precision not null,
 
     category varchar(20) not null
 

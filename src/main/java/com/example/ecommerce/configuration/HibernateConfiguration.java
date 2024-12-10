@@ -50,16 +50,17 @@ public class HibernateConfiguration {
 
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl("jdbc:h2:file:/home/pablo/test");
-        dataSource.setUsername("sa");
-        dataSource.setPassword("password");
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://localhost:5431/postgres?currentSchema=ecommerce");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("postgres");
+        dataSource.setSchema("ecommerce");
         return dataSource;
     }
 
     private Properties hibernateProperties() {
         Properties properties = new Properties();
-        properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+        properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         properties.put("hibernate.show_sql", "true");
         properties.put("hibernate.hbm2ddl.auto", "none");
 
