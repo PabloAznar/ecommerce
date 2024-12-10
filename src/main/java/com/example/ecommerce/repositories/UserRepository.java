@@ -12,9 +12,4 @@ public class UserRepository extends Repository<String, User>{
         super(sessionFactory, User.class);
     }
 
-    //TODO
-    @Override
-    public User findByCriteria() {
-        return null;
-    }
 }
