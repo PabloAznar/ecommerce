@@ -8,10 +8,12 @@ import com.example.ecommerce.shoppingcart.domain.ShoppingCart;
 import com.example.ecommerce.shoppingcart.domain.ShoppingCartRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Repository
+@Transactional
 public class PostgresShoppingCartRepository extends HibernateRepository<String, ShoppingCart> implements ShoppingCartRepository {
 
     public PostgresShoppingCartRepository(SessionFactory sessionFactory) {
@@ -20,7 +22,7 @@ public class PostgresShoppingCartRepository extends HibernateRepository<String, 
 
     @Override
     public void create(ShoppingCart shoppingCart) {
-        save(shoppingCart);
+        persist(shoppingCart);
     }
 
     @Override

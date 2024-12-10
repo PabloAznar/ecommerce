@@ -25,6 +25,11 @@ public class PostgresUserRepository extends HibernateRepository<String, User> im
     }
 
     @Override
+    public void save(User user) {
+        persist(user);
+    }
+
+    @Override
     public User findById(String id) {
         return byId(id)
                 .orElseThrow(() -> {

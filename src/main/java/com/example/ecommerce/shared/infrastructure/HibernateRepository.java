@@ -23,8 +23,8 @@ public abstract class HibernateRepository<T, K>{
         return Optional.ofNullable(sessionFactory.getCurrentSession().byId(classType).load(id));
     }
 
-    public void save(K entity) {
-        sessionFactory.getCurrentSession().persist(entity);
+    public void persist(K entity) {
+        sessionFactory.getCurrentSession().saveOrUpdate(entity);
         sessionFactory.getCurrentSession().flush();
         sessionFactory.getCurrentSession().clear();
     }

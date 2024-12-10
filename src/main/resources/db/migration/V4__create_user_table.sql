@@ -12,11 +12,8 @@ CREATE TABLE IF NOT EXISTS "USER"(
 
     password varchar(1000) not null,
 
-    shopping_cart_id varchar(45),
+    payment_id varchar(45) null
 
-    payment_id varchar(45) null,
-
-    constraint user_fk_shopping_cart_id foreign key(shopping_cart_id) references shopping_cart(id)
 );
 
 CREATE INDEX IF NOT EXISTS idx_user_login ON "USER"(email, password);
