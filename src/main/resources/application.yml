@@ -16,8 +16,5 @@ spring:
       enabled: true
       path: /h2-console
 
-endpoints:
-  base: /api/v1
-
 flyway:
   migrations: classpath:db/migrations

@@ -1,6 +1,6 @@
 package com.example.ecommerce.shared.user.domain;
 
-import com.example.ecommerce.shared.events.domain.AbstractEvent;
+import com.example.ecommerce.shared.domain.events.AbstractEvent;
 import com.example.ecommerce.user.domain.User;
 
 public class UserCreatedEvent extends AbstractEvent {

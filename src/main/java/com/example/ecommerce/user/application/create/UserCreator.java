@@ -1,6 +1,6 @@
 package com.example.ecommerce.user.application.create;
 
-import com.example.ecommerce.shared.events.domain.EventBus;
+import com.example.ecommerce.shared.domain.events.EventBus;
 import com.example.ecommerce.shared.user.domain.UserCreatedEvent;
 import com.example.ecommerce.user.domain.User;
 import com.example.ecommerce.user.domain.UserRepository;

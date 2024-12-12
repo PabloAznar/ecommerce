@@ -1,8 +1,8 @@
 package com.example.ecommerce.user.domain;
 
 import com.example.ecommerce.entities.Direction;
-import com.example.ecommerce.entities.Order;
 import com.example.ecommerce.entities.Payment;
+import com.example.ecommerce.order.domain.Order;
 import com.example.ecommerce.shoppingcart.domain.ShoppingCart;
 import jakarta.persistence.*;
 import lombok.Data;

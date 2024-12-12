@@ -1,6 +1,6 @@
 package com.example.ecommerce.shoppingcart.domain;
 
-import com.example.ecommerce.entities.Product;
+import com.example.ecommerce.product.domain.Product;
 import com.example.ecommerce.user.domain.User;
 import jakarta.persistence.*;
 import lombok.Data;

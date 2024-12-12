@@ -1,9 +1,9 @@
 package com.example.ecommerce.user.infrastructure;
 
-import com.example.ecommerce.shared.domain.Criteria;
-import com.example.ecommerce.shared.exceptions.ECommerceException;
-import com.example.ecommerce.shared.exceptions.ExceptionType;
-import com.example.ecommerce.shared.infrastructure.HibernateRepository;
+import com.example.ecommerce.shared.domain.criteria.Criteria;
+import com.example.ecommerce.shared.domain.errorhandler.exceptions.ECommerceException;
+import com.example.ecommerce.shared.domain.errorhandler.exceptions.ExceptionType;
+import com.example.ecommerce.shared.infrastructure.hibernate.HibernateRepository;
 import com.example.ecommerce.user.domain.User;
 import com.example.ecommerce.user.domain.UserRepository;
 import org.hibernate.SessionFactory;
@@ -39,12 +39,7 @@ public class PostgresUserRepository extends HibernateRepository<String, User> im
     }
 
     @Override
-    public List<User> findAll() {
-        return List.of();
-    }
-
-    @Override
     public List<User> findByCriteria(Criteria criteria) {
-        return List.of();
+        return byCriteria(criteria);
     }
 }

@@ -1,9 +1,9 @@
 package com.example.ecommerce.shoppingcart.infraestructure;
 
-import com.example.ecommerce.shared.domain.Criteria;
-import com.example.ecommerce.shared.exceptions.ECommerceException;
-import com.example.ecommerce.shared.exceptions.ExceptionType;
-import com.example.ecommerce.shared.infrastructure.HibernateRepository;
+import com.example.ecommerce.shared.domain.criteria.Criteria;
+import com.example.ecommerce.shared.domain.errorhandler.exceptions.ECommerceException;
+import com.example.ecommerce.shared.domain.errorhandler.exceptions.ExceptionType;
+import com.example.ecommerce.shared.infrastructure.hibernate.HibernateRepository;
 import com.example.ecommerce.shoppingcart.domain.ShoppingCart;
 import com.example.ecommerce.shoppingcart.domain.ShoppingCartRepository;
 import org.hibernate.SessionFactory;

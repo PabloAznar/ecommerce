@@ -1,6 +1,6 @@
 package com.example.ecommerce.shoppingcart.domain;
 
-import com.example.ecommerce.shared.domain.Criteria;
+import com.example.ecommerce.shared.domain.criteria.Criteria;
 
 import java.util.List;
 
