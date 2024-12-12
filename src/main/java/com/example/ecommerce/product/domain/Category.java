@@ -1,4 +1,4 @@
-package com.example.ecommerce.entities;
+package com.example.ecommerce.product.domain;
 
 import lombok.Getter;
 

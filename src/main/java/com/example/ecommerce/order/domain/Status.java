@@ -1,4 +1,4 @@
-package com.example.ecommerce.entities;
+package com.example.ecommerce.order.domain;
 
 public enum Status {
     IN_PROGRESS,

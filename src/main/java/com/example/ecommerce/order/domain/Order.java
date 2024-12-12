@@ -1,6 +1,5 @@
 package com.example.ecommerce.order.domain;
 
-import com.example.ecommerce.entities.Status;
 import com.example.ecommerce.product.domain.Product;
 import com.example.ecommerce.user.domain.User;
 import jakarta.persistence.*;
