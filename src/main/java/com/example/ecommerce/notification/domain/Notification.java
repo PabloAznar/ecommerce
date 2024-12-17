@@ -1,4 +1,4 @@
-package com.example.ecommerce.entities;
+package com.example.ecommerce.notification.domain;
 
 import com.example.ecommerce.user.domain.User;
 import jakarta.persistence.*;

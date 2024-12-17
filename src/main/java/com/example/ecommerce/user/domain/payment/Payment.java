@@ -1,5 +1,6 @@
-package com.example.ecommerce.entities;
+package com.example.ecommerce.user.domain.payment;
 
+import com.example.ecommerce.user.domain.User;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -18,4 +19,7 @@ public class Payment {
 
     private String cvv;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

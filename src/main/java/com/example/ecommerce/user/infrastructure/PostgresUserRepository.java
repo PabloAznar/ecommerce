@@ -42,4 +42,6 @@ public class PostgresUserRepository extends HibernateRepository<String, User> im
     public List<User> findByCriteria(Criteria criteria) {
         return byCriteria(criteria);
     }
+
+
 }

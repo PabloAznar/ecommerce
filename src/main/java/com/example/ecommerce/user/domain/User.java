@@ -1,9 +1,9 @@
 package com.example.ecommerce.user.domain;
 
-import com.example.ecommerce.entities.Direction;
-import com.example.ecommerce.entities.Payment;
 import com.example.ecommerce.order.domain.Order;
 import com.example.ecommerce.shoppingcart.domain.ShoppingCart;
+import com.example.ecommerce.user.domain.adress.Address;
+import com.example.ecommerce.user.domain.payment.Payment;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -31,15 +31,13 @@ public class User {
     @OneToOne(mappedBy = "user")
     private ShoppingCart shoppingCart;
 
-    @OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
-    private List<Direction> directions;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Address> addresses;
 
-    @OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Order> orders;
 
-    @OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Payment> payments;
 
 }

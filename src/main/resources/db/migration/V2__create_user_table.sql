@@ -10,9 +10,7 @@ CREATE TABLE IF NOT EXISTS "USER"(
 
     email varchar(50) not null unique,
 
-    password varchar(1000) not null,
-
-    payment_id varchar(45) null
+    password varchar(1000) not null
 
 );
 

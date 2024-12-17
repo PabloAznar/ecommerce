@@ -11,4 +11,5 @@ public interface UserRepository {
     User findById(String id);
 
     List<User> findByCriteria(Criteria criteria);
+
 }
