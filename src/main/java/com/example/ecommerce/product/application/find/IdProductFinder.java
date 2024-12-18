@@ -5,11 +5,11 @@ import com.example.ecommerce.product.domain.ProductRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductIdFinder {
+public class IdProductFinder {
 
     private final ProductRepository productRepository;
 
-    public ProductIdFinder(final ProductRepository productRepository) {
+    public IdProductFinder(final ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 

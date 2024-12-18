@@ -3,7 +3,7 @@ package com.example.ecommerce.order.application.add;
 import com.example.ecommerce.order.domain.Order;
 import com.example.ecommerce.order.domain.OrderRepository;
 import com.example.ecommerce.order.domain.dto.ProductOrderDto;
-import com.example.ecommerce.product.shared.ProductCreatorComponent;
+import com.example.ecommerce.product.domain.Product;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,7 +17,9 @@ public class OrderProductAdder {
 
     public void add(final ProductOrderDto productOrder) {
         Order order = orderRepository.findById(productOrder.getOrderId());
-        order.addProduct(ProductCreatorComponent.crate(productOrder.getProductId()));
+        Product product = new Product();
+        product.setId(productOrder.getProductId());
+        order.addProduct(product);
         orderRepository.save(order);
     }
 

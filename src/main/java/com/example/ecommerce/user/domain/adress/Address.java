@@ -17,6 +17,8 @@ public class Address {
 
     private String city;
 
+    private String street;
+
     @Column(name = "postal_code")
     private String postalCode;
 

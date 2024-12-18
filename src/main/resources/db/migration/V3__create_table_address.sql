@@ -6,6 +6,8 @@ CREATE TABLE IF NOT EXISTS ADDRESS(
 
     city varchar(20) not null,
 
+    street varchar(80) not null,
+
     postal_code varchar(10) not null,
 
     user_id varchar(45) not null,

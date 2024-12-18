@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS PAYMENT(
 
     id varchar(45) not null primary key,
 
-    card_number varchar(16) not null,
+    card_number varchar(20) unique not null,
 
     expiration_date date not null,
 

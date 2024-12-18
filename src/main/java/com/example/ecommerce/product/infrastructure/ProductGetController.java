@@ -1,6 +1,6 @@
 package com.example.ecommerce.product.infrastructure;
 
-import com.example.ecommerce.product.application.find.ProductIdFinder;
+import com.example.ecommerce.product.application.find.IdProductFinder;
 import com.example.ecommerce.product.domain.Product;
 import com.example.ecommerce.shared.domain.Constants;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProductGetController {
 
-    private final ProductIdFinder productFinder;
+    private final IdProductFinder productFinder;
 
-    public ProductGetController(final ProductIdFinder productFinder) {
+    public ProductGetController(final IdProductFinder productFinder) {
         this.productFinder = productFinder;
     }
 
