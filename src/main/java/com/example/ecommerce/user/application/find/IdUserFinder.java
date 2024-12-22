@@ -1,5 +1,6 @@
 package com.example.ecommerce.user.application.find;
 
+import com.example.ecommerce.shared.aspects.domain.AspectException;
 import com.example.ecommerce.user.domain.User;
 import com.example.ecommerce.user.domain.UserRepository;
 import org.springframework.stereotype.Service;

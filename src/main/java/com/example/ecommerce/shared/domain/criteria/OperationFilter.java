@@ -1,7 +1,8 @@
 package com.example.ecommerce.shared.domain.criteria;
 
+import com.example.ecommerce.shared.aspects.domain.AspectException;
 import com.example.ecommerce.shared.domain.errorhandler.exceptions.ECommerceException;
-import com.example.ecommerce.shared.domain.errorhandler.exceptions.ExceptionType;
+import org.springframework.http.HttpStatus;
 
 public enum OperationFilter {
     EQUALS("="),
@@ -16,6 +17,7 @@ public enum OperationFilter {
         this.operation = operation;
     }
 
+    @AspectException
     public static OperationFilter fromValue(String value) {
         return switch (value) {
             case "=" ->  OperationFilter.EQUALS;
@@ -23,7 +25,7 @@ public enum OperationFilter {
             case ">" ->  OperationFilter.GREATER_THAN;
             case "<" ->  OperationFilter.LESS_THAN;
             case "contains" ->  OperationFilter.CONTAINS;
-            default -> throw new ECommerceException(ExceptionType.OPERATION_NOT_SUPPORTED);
+            default -> throw new ECommerceException(HttpStatus.BAD_REQUEST, String.format("Operation %s doesn't supported in current criteria implementation"));
         };
     }
 

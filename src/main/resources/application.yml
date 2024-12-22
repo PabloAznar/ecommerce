@@ -18,3 +18,8 @@ spring:
 
 flyway:
   migrations: classpath:db/migrations
+
+logging:
+  level:
+    org:
+      aspectj: DEBUG
