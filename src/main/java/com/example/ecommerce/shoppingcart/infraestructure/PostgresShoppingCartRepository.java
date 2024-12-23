@@ -1,12 +1,13 @@
 package com.example.ecommerce.shoppingcart.infraestructure;
 
+import com.example.ecommerce.shared.aspects.domain.AspectException;
 import com.example.ecommerce.shared.domain.criteria.Criteria;
 import com.example.ecommerce.shared.domain.errorhandler.exceptions.ECommerceException;
-import com.example.ecommerce.shared.domain.errorhandler.exceptions.ExceptionType;
 import com.example.ecommerce.shared.infrastructure.hibernate.HibernateRepository;
 import com.example.ecommerce.shoppingcart.domain.ShoppingCart;
 import com.example.ecommerce.shoppingcart.domain.ShoppingCartRepository;
 import org.hibernate.SessionFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,12 +27,12 @@ public class PostgresShoppingCartRepository extends HibernateRepository<String, 
     }
 
     @Override
+    @AspectException
     public ShoppingCart findById(String id) {
         return byId(id)
-                .orElseThrow(() -> {
-                    //log.error("Shopping cart with id {} not found", id);
-                    return new ECommerceException(ExceptionType.SHOPPING_CART_NOT_FOUND);
-                });
+                .orElseThrow(() ->
+                     new ECommerceException(HttpStatus.NOT_FOUND, String.format("Shopping cart with id %s not found", id))
+                );
     }
 
     @Override

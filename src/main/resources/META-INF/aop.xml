@@ -1,0 +1,8 @@
+<aspectj>
+    <aspects>
+        <aspect name="com.example.ecommerce.shared.aspects.domain.AspectException"/>
+        <weaver options="-verbose -showWeaveInfo">
+            <include within="com.example.ecommerce.*"/>
+        </weaver>
+    </aspects>
+</aspectj>

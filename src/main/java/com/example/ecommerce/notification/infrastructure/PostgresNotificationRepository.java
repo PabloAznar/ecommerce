@@ -2,11 +2,12 @@ package com.example.ecommerce.notification.infrastructure;
 
 import com.example.ecommerce.notification.domain.Notification;
 import com.example.ecommerce.notification.domain.NotificationRepository;
+import com.example.ecommerce.shared.aspects.domain.AspectException;
 import com.example.ecommerce.shared.domain.criteria.Criteria;
 import com.example.ecommerce.shared.domain.errorhandler.exceptions.ECommerceException;
-import com.example.ecommerce.shared.domain.errorhandler.exceptions.ExceptionType;
 import com.example.ecommerce.shared.infrastructure.hibernate.HibernateRepository;
 import org.hibernate.SessionFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,11 +27,12 @@ public class PostgresNotificationRepository extends HibernateRepository<String, 
     }
 
     @Override
+    @AspectException
     public Notification findById(String id) {
         return this.byId(id)
-                .orElseThrow(() -> {
-                    return new ECommerceException(ExceptionType.NOTIFICATION_NOT_FOUND);
-                });
+                .orElseThrow(() ->
+                        new ECommerceException(HttpStatus.NOT_FOUND, String.format("Notification with id %s not found", id))
+                );
     }
 
     @Override

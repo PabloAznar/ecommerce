@@ -6,19 +6,13 @@ public class ECommerceException extends RuntimeException  {
 
     private HttpStatus status;
 
-    public ECommerceException(ExceptionType type) {
-        super(type.getMessage());
-        status = type.getStatus();
+    public ECommerceException(HttpStatus status, String message) {
+        super(message);
+        this.status = status;
     }
 
     public HttpStatus getStatus() {
         return status;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("status: %d %s\n" +
-                "message: %s", status.value(), status.name(), getMessage());
     }
 
 }
