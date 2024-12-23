@@ -35,7 +35,7 @@ public class ControllerLogAspect {
         return result;
     }
 
-    @AfterThrowing(value = "execution(* com.example.ecommerce..*.*(..))", throwing = "exception")
+    @AfterThrowing(value = "@annotation(com.example.ecommerce.shared.aspects.domain.AspectException)", throwing = "exception")
     public void logException(JoinPoint joinPoint, Throwable exception) {
         String className = joinPoint.getTarget().getClass().getSimpleName();
         String method = joinPoint.getSignature().getName();
