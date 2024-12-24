@@ -1,6 +1,6 @@
-CREATE TABLE IF NOT EXISTS "ORDER"(
+CREATE TABLE IF NOT EXISTS ORDERS(
 
-    id varchar(45) not null primary key,
+    order_id varchar(45) not null primary key,
 
     creation_date timestamp not null,
 
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS "ORDER"(
 
     user_id varchar(45) not null,
 
-    constraint order_fk_user_id foreign key (user_id) references "USER"(id)
+    constraint order_fk_user_id foreign key (user_id) references USERS(user_id)
 );
 
-CREATE INDEX IF NOT EXISTS idx_order ON "ORDER"(user_id);
+CREATE INDEX IF NOT EXISTS idx_order ON ORDERS(user_id);

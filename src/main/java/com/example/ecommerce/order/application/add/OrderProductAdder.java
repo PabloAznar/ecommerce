@@ -18,7 +18,7 @@ public class OrderProductAdder {
     public void add(final ProductOrderDto productOrder) {
         Order order = orderRepository.findById(productOrder.getOrderId());
         Product product = new Product();
-        product.setId(productOrder.getProductId());
+        product.setProductId(productOrder.getProductId());
         order.addProduct(product);
         orderRepository.save(order);
     }

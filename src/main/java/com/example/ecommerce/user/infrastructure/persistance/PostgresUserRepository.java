@@ -1,4 +1,4 @@
-package com.example.ecommerce.user.infrastructure;
+package com.example.ecommerce.user.infrastructure.persistance;
 
 import com.example.ecommerce.shared.aspects.domain.AspectException;
 import com.example.ecommerce.shared.domain.criteria.Criteria;
@@ -8,9 +8,8 @@ import com.example.ecommerce.user.domain.User;
 import com.example.ecommerce.user.domain.UserRepository;
 import com.example.ecommerce.user.domain.adress.Address;
 import com.example.ecommerce.user.domain.payment.Payment;
+import com.example.ecommerce.user.domain.vo.UserId;
 import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,7 +18,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class PostgresUserRepository extends HibernateRepository<String, User> implements UserRepository {
+public class PostgresUserRepository extends HibernateRepository<UserId, User> implements UserRepository {
 
 
     public PostgresUserRepository(SessionFactory sessionFactory) {
@@ -34,7 +33,7 @@ public class PostgresUserRepository extends HibernateRepository<String, User> im
     @Override
     @AspectException
     public User findById(String id) {
-        return byId(id)
+        return byId(new UserId(id))
                 .orElseThrow(() ->
                         new ECommerceException(HttpStatus.NOT_FOUND, String.format("User with id %s not found", id)));
     }

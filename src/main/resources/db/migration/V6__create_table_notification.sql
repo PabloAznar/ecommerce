@@ -1,12 +1,12 @@
 CREATE TABLE IF NOT EXISTS NOTIFICATION(
 
-    id varchar(45) not null primary key,
+    notification_id varchar(45) not null primary key,
 
     description text null,
 
     user_id varchar(45) not null,
 
-    constraint notification_fk_user_id foreign key (user_id) references "USER"(id)
+    constraint notification_fk_user_id foreign key (user_id) references USERS(user_id)
 
 );
 

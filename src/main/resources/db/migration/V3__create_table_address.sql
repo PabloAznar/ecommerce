@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS ADDRESS(
 
-    id varchar(45) not null primary key,
+    address_id varchar(45) not null primary key,
 
     country varchar(20) not null,
 
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS ADDRESS(
 
     user_id varchar(45) not null,
 
-    constraint address_user_id foreign key (user_id) references "USER"(id)
+    constraint address_user_id foreign key (user_id) references USERS(user_id)
 
 );
 

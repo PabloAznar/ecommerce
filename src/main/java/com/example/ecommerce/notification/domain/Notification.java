@@ -8,8 +8,9 @@ import jakarta.persistence.*;
 public class Notification {
 
     @Id
+    @Column(name = "order_id")
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private String orderId;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

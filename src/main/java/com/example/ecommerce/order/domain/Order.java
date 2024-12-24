@@ -11,13 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "\"ORDER\"")
+@Table(name = "ORDERS")
 @Data
 public class Order {
 
     @Id
+    @Column(name = "order_id")
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private String orderId;
 
     @Column(name = "creation_date")
     private LocalDateTime creationDate;

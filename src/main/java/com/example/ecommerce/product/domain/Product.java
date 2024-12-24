@@ -9,8 +9,9 @@ import lombok.Data;
 public class Product {
 
     @Id
+    @Column(name = "product_id")
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private String productId;
 
     private String title;
 

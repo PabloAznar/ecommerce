@@ -13,8 +13,9 @@ import java.util.List;
 public class ShoppingCart {
 
     @Id
+    @Column(name = "shopping_cart_id")
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private String shoppingCartId;
 
     @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "user_id")

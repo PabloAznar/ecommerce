@@ -12,6 +12,7 @@ import java.time.LocalDate;
 public class Payment {
 
     @Id
+    @Column(name = "payment_id")
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 

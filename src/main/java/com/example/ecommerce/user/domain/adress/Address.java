@@ -10,8 +10,9 @@ import lombok.Data;
 public class Address {
 
     @Id
+    @Column(name = "address_id")
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private String addressId;
 
     private String country;
 

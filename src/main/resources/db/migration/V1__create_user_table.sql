@@ -1,6 +1,6 @@
-CREATE TABLE IF NOT EXISTS "USER"(
+CREATE TABLE IF NOT EXISTS USERS(
 
-    id varchar(45) not null primary key,
+    user_id varchar(45) not null primary key,
 
     name varchar(50) not null,
 
@@ -14,5 +14,5 @@ CREATE TABLE IF NOT EXISTS "USER"(
 
 );
 
-CREATE INDEX IF NOT EXISTS idx_user_login ON "USER"(email, password);
-CREATE INDEX IF NOT EXISTS idx_user ON "USER"(id);
+CREATE INDEX IF NOT EXISTS idx_user_login ON USERS(email, password);
+CREATE INDEX IF NOT EXISTS idx_user ON USERS(user_id);

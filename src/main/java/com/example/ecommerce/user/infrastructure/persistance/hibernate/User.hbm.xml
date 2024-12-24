@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.example.ecommerce.user.domain.User" table="USERS">
+        <composite-id name="userId" class="com.example.ecommerce.user.domain.vo.UserId" access="field">
+            <key-property column="user_id" name="value" length="45" access="field" />
+        </composite-id>
+
+        <component name="name" class="com.example.ecommerce.user.domain.vo.UserName" access="field">
+            <property name="value" column="name" type="string" access="field" />
+        </component>
+
+        <component name="surname" class="com.example.ecommerce.user.domain.vo.UserSurname" access="field">
+            <property name="value" column="surname" type="string" access="field" />
+        </component>
+
+        <component name="password" class="com.example.ecommerce.user.domain.vo.UserPassword" access="field">
+            <property name="value" column="password" type="string" access="field" />
+        </component>
+
+        <component name="email" class="com.example.ecommerce.user.domain.vo.UserEmail" access="field">
+            <property name="value" column="email" type="string" access="field" />
+        </component>
+
+        <component name="phone" class="com.example.ecommerce.user.domain.vo.UserPhone" access="field">
+            <property name="value" column="phone" type="string" access="field" />
+        </component>
+    </class>
+</hibernate-mapping>
