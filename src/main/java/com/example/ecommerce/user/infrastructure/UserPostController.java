@@ -1,7 +1,9 @@
 package com.example.ecommerce.user.infrastructure;
 
 import com.example.ecommerce.shared.domain.Constants;
+import com.example.ecommerce.shared.domain.bus.command.CommandBus;
 import com.example.ecommerce.shared.domain.criteria.Criteria;
+import com.example.ecommerce.user.application.create.CreateUserCommand;
 import com.example.ecommerce.user.application.create.UserCreator;
 import com.example.ecommerce.user.application.find.CriteriaUserFinder;
 import com.example.ecommerce.user.domain.User;
@@ -17,18 +19,18 @@ import java.util.List;
 @RestController
 public class UserPostController {
 
-    private final UserCreator userCreator;
+    private final CommandBus commandBus;
 
     private final CriteriaUserFinder userFinder;
 
-    public UserPostController(final UserCreator userCreator, final CriteriaUserFinder userFinder) {
-        this.userCreator = userCreator;
+    public UserPostController(final CommandBus commandBus, final CriteriaUserFinder userFinder) {
+        this.commandBus = commandBus;
         this.userFinder = userFinder;
     }
 
     @PostMapping(path = Constants.API_BASE_PATH + "/users", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity createUser(@RequestBody User user) {
-        userCreator.create(user);
+    public ResponseEntity createUser(@RequestBody CreateUserCommand command) {
+        commandBus.dispatch(command);
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
